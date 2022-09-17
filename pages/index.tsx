@@ -4,16 +4,16 @@ import Link from 'next/link'
 
 const Home: NextPage = () => {
   return (
-      <Center>
-        <Text>Welcome to</Text>
-        <Text>Snapshot testing & Component testing Workshop!</Text>
+    <Center>
+      <Text>Welcome to</Text>
+      <Text>Snapshot testing & Component testing Workshop!</Text>
 
-        <List>
-          <ListItem>
-            <Link href={'/snapshot-1'}>Snapshot testing 1</Link>
-          </ListItem>
-        </List>
-      </Center>
+      <List>
+        <ListItem>
+          <Link href={'/snapshot-1'}>Snapshot testing 1</Link>
+        </ListItem>
+      </List>
+    </Center>
   )
 }
 
