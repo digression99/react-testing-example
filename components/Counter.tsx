@@ -46,8 +46,23 @@ const useCounter = (initialCount: number = 0, option: CounterOption) => {
 }
 
 export const Counter = () => {
-  const { count, error, increase, decrease, reset } = useCounter(0, { min: -5, max: 5 })
+  const { count, error, ...methods } = useCounter(0, { min: -5, max: 5 })
+  return <PureCounter
+    count={count}
+    error={error}
+    onIncrease={methods.increase}
+    onDecrease={methods.decrease}
+    onReset={methods.reset}
+  />
+}
 
+type PureCounterProps = Omit<ReturnType<typeof useCounter>, 'increase' | 'decrease' | 'reset'> & {
+  onIncrease: VoidFunction
+  onDecrease: VoidFunction
+  onReset: VoidFunction
+}
+
+export const PureCounter = ({ count, error, onIncrease, onDecrease, onReset}: PureCounterProps) => {
   return (
     <Box>
       <Box>
@@ -56,9 +71,9 @@ export const Counter = () => {
 
       <Box>
         <Text>Controllers</Text>
-        <Button onClick={increase}>Increase</Button>
-        <Button onClick={decrease}>Decrease</Button>
-        <Button onClick={reset}>Reset</Button>
+        <Button onClick={onIncrease}>Increase</Button>
+        <Button onClick={onDecrease}>Decrease</Button>
+        <Button onClick={onReset}>Reset</Button>
       </Box>
 
       <Box>
@@ -67,3 +82,10 @@ export const Counter = () => {
     </Box>
   )
 }
+
+
+
+
+
+
+

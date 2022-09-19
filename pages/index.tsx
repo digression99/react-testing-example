@@ -1,19 +1,15 @@
-import {Center, List, Text, ListItem } from '@chakra-ui/react'
+import {Center, Text } from '@chakra-ui/react'
 import type { NextPage } from 'next'
-import Link from 'next/link'
+import { PageLayout } from "../components/layout/PageLayout";
 
 const Home: NextPage = () => {
   return (
-    <Center>
-      <Text>Welcome to</Text>
-      <Text>Snapshot testing & Component testing Workshop!</Text>
-
-      <List>
-        <ListItem>
-          <Link href={'/snapshot-1'}>Snapshot testing 1</Link>
-        </ListItem>
-      </List>
-    </Center>
+    <PageLayout>
+      <Center>
+        <Text>Welcome to</Text>
+        <Text>Snapshot testing & Component testing Workshop!</Text>
+      </Center>
+    </PageLayout>
   )
 }
 
