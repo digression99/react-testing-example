@@ -11,7 +11,7 @@ exports[`<Counter /> renders the component correctly 1`] = `
       <p
         class="chakra-text css-0"
       >
-        Count :
+        Count : 
         0
       </p>
     </div>
@@ -64,7 +64,7 @@ exports[`<Counter /> renders the component correctly 2`] = `
       <p
         class="chakra-text css-0"
       >
-        Count :
+        Count : 
         100
       </p>
     </div>
@@ -119,7 +119,7 @@ exports[`<Counter /> renders the special component correctly 1`] = `
       <p
         class="chakra-text css-0"
       >
-        Count :
+        Count : 
         30
       </p>
     </div>
@@ -161,3 +161,4 @@ exports[`<Counter /> renders the special component correctly 1`] = `
     </div>
   </div>
 </div>
+`;

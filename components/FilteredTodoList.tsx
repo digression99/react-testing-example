@@ -3,7 +3,7 @@ import { faker } from '@faker-js/faker'
 import {useCallback, useState, ComponentType, useMemo} from "react";
 import { ChevronDownIcon } from '@chakra-ui/icons'
 
-type Todo = {
+export type Todo = {
   title: string
   completed: boolean
   id: string
@@ -20,7 +20,6 @@ const getFilteredTodo = (filterType: TodoFilterType, todo: Todo) =>
 const useTodos = () => {
   const [list, setList] = useState<Todo[]>([])
   const [filter, setFilter] = useState<TodoFilterType>('ALL')
-
   const addTodo = useCallback(
     (title: string) => setList(ls =>
       ([...ls, {
@@ -28,18 +27,15 @@ const useTodos = () => {
       }])
     ),
     [])
-
   const removeTodo = useCallback((id: string) =>
     setList(ls =>
       ls.filter(todo =>
         todo.id !== id
       )), [])
-
   const toggleTodo = useCallback((id: string) =>
     setList(ls =>
       ls.map(todo => getToggledTodo(id, todo)
       )), [])
-
   const changeFilter = useCallback((filterType: TodoFilterType) => setFilter(filterType), [])
   const filteredList = useMemo(() => list.filter(todo => getFilteredTodo(filter, todo)), [filter, list])
   return { list: filteredList, addTodo, removeTodo, toggleTodo, changeFilter }
@@ -53,7 +49,7 @@ type PureProps = {
   onFilterTodo: (filterType: TodoFilterType) => void
 }
 
-const PureFilteredTodoList = ({ list, onToggleTodo, onRemoveTodo, onAddTodo, onFilterTodo }: PureProps) => {
+export const PureFilteredTodoList = ({ list, onToggleTodo, onRemoveTodo, onAddTodo, onFilterTodo }: PureProps) => {
   const [title, setTitle] = useState('')
 
   const onCreate = () => {
@@ -65,7 +61,7 @@ const PureFilteredTodoList = ({ list, onToggleTodo, onRemoveTodo, onAddTodo, onF
     <Box>
       <Box>
         <Text>Todo Form</Text>
-        <Input value={title} onChange={e => setTitle(e.target.value)} />
+        <Input value={title} onChange={e => setTitle(e.target.value)} aria-label={'title'} />
         <Button onClick={onCreate} disabled={!title}>Create</Button>
       </Box>
 
