@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ApiRequest /> renders correctly 1`] = `
+<div>
+  <div
+    class="css-0"
+  >
+    <div
+      class="css-0"
+    >
+      Loading...
+    </div>
+  </div>
+</div>
+`;

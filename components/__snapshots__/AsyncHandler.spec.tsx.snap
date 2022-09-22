@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<AsyncComponent /> renders correctly 1`] = `
+<div>
+  <div
+    class="css-0"
+  >
+    <button
+      class="chakra-button css-0"
+      type="button"
+    >
+      Show the text after 1 seconds
+    </button>
+  </div>
+</div>
+`;
