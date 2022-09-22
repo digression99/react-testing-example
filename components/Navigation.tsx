@@ -23,6 +23,12 @@ export const Navigation = () => {
             <Link>TodoList</Link>
           </NextLink>
         </ListItem>
+
+        <ListItem>
+          <NextLink href='/samples/api-request-example' passHref>
+            <Link>ApiRequest</Link>
+          </NextLink>
+        </ListItem>
       </List>
     </Box>
     )

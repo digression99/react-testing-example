@@ -78,7 +78,7 @@ describe('<FilteredTodoList />', () => {
     await user.click(allFilterButton)
 
     // You can debug the screen with this method.
-    screen.debug()
+    // screen.debug()
     expect(screen.getByText('Test todo 1')).toBeInTheDocument()
     expect(screen.queryAllByText(/Test todo/i)).toHaveLength(2)
   })
